@@ -7,7 +7,7 @@ export function fetchProducts() {
 	return (dispatch, getstate) => {
 		console.log("fetchProduct middleware");
 		dispatch({ type: FETCH_PRODUCTS });
-		fetch("http://localhost:3000/category.json")
+		fetch("/category.json")
 			.then(res => res.json())
 			.then(json => {
 				console.log("json", json.status);
