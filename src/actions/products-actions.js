@@ -11,6 +11,7 @@ export function fetchProducts() {
 			.then(res => res.json())
 			.then(json => {
 				console.log("json", json.status);
+				
 				dispatch({ type: RECEIVE_PRODUCTS, data: json });
 			})
 			.catch(error => {

@@ -3,11 +3,17 @@ import BuyProduct from "./BuyProduct";
 import CartSummary from "./CartSummary";
 import styles from "../../css/cart.module.css";
 import classNames from "classnames";
+import { connect } from "react-redux";
+import { removeFromCart } from "../../actions/cart-actions";
 
 const cx = classNames.bind(styles);
 
 class CartInfo extends React.Component {
+	handleRemoveFromCart = (id) => {
+		this.props.removeFromCart(id);
+	}
 	render() {
+		const {cartProducts} = this.props;
 		return (
 			<div className={styles.cart}>
 				<div className={styles.cartTitle}>GIỎ HÀNG</div>
@@ -21,7 +27,10 @@ class CartInfo extends React.Component {
 						<div className={styles.buyPrice}>GIÁ</div>
 						<div className={styles.buyDelete} />
 					</div>
-					<BuyProduct></BuyProduct>
+					{cartProducts.map(item=> 
+						<BuyProduct key = {item.id} {...item} onRemoveFromCart = {this.handleRemoveFromCart}/>
+					)}
+					
 				</div>
 				<CartSummary></CartSummary>
 			</div>
@@ -29,4 +38,13 @@ class CartInfo extends React.Component {
 	}
 }
 
-export default CartInfo;
+const mapStateToProps = (state) => {
+	return {
+		cartProducts: state.cartCount.cartProducts
+	}
+}
+const mapDispatchToProps={
+	removeFromCart,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartInfo);

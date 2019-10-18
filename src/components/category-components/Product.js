@@ -10,7 +10,7 @@ class Product extends React.Component {
 				<Link to="/detail">
 					<div className={styles.hide}>
 						<button
-							onClick={onAddToCart.bind(id)}
+							onClick={(e)=> {e.preventDefault(); return onAddToCart(id,src,price)}}
 							className={styles.addCart}
 						>
 							ADD TO CART

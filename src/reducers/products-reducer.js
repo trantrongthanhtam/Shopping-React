@@ -6,7 +6,7 @@ import {
 
 const initialState = {
 	total: 0,
-	items: []
+	items: [],
 };
 
 export default function productsReducer(state = initialState, action) {
@@ -15,10 +15,11 @@ export default function productsReducer(state = initialState, action) {
 			return { ...state, isFetching: true };
 
 		case RECEIVE_PRODUCTS: {
-			const { items } = action.data;
+			const { items,total } = action.data;
 			return {
 				...state,
-				items: items
+				items: items,
+				total: total,
 			};
 		}
 		case FETCH_PRODUCTS_FAILED:

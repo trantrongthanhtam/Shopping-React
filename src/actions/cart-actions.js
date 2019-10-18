@@ -2,14 +2,18 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 //action creator
-export function addToCart() {
+export function addToCart(id,src,price) {
 	return {
-		type: ADD_TO_CART
+		type: ADD_TO_CART,
+		itemId: id,
+		itemSrc: src,
+		itemPrice: price,
 	};
 }
 
-export function removeFromCart() {
+export function removeFromCart(id) {
 	return {
-		type: REMOVE_FROM_CART
+		type: REMOVE_FROM_CART,
+		removedItemId: id
 	};
 }

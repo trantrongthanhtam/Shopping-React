@@ -1,56 +1,62 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cart-actions";
 const defaultState = {
 	total: 0,
-	product: []
+	cartProducts: []
 };
 export default function cartReducer(state = defaultState, action) {
+	const { cartProducts,total } = state;
+	let updatedCart;
 	switch (action.type) {
 		case ADD_TO_CART:
-			// const { product } = action;
-			// const { items } = state;
-			// let updatedCart;
-			// const cartProduct = items.find(item => item.id === product.id);
-			// if (cartProduct) {
-			// 	// item has been added before
-			// 	updatedCart = items.map(item => {
-			// 		if (item.id === cartProduct.id) {
-			// 			return {
-			// 				...item,
-			// 				quantity: item.quantity + 1
-			// 			};
-			// 		}
-
-			// 		return item;
-			// 	});
-			// } else {
-			// 	// add new item
-			// 	updatedCart = [
-			// 		...items,
-			// 		{
-			// 			...product,
-			// 			quantity: 1
-			// 		}
-			// 	];
-			// }
-
-			// const total = calculateTotal(updatedCart);
-
-			return { ...state, total: state.total + 1 };
+			const { itemId, itemSrc, itemPrice } = action;
+			
+			
+			const foundItem = cartProducts.find(item => item.id === itemId);
+			if (foundItem) {
+				// item has been added before
+				updatedCart = cartProducts.map(item => {
+					if (item.id === itemId) {
+						return {
+							...item,
+							quantity: item.quantity + 1
+						};
+					}
+					return item;
+				});
+			} else {
+				updatedCart = [...cartProducts,
+					{
+						id: itemId,
+						src: itemSrc,
+						price:itemPrice,
+						quantity: 1,
+					}];
+			}
+			
+			return { ...state, 
+				total: total + 1,
+				cartProducts: updatedCart
+			 };
 
 		case REMOVE_FROM_CART:
-			let totalCount = state.total - 1;
+			const {removedItemId} = action;
+			let quantityRemoved=0;
+			updatedCart = cartProducts.map(item => {
+				if (item.id === removedItemId) {
+					quantityRemoved = item.quantity;
+						return null;
+						
+				}
+				return item;
+			});
+			let totalCount = state.total - quantityRemoved;
 			if (totalCount < 0) totalCount = 0;
 			return {
 				...state,
-				total: totalCount
+				total: totalCount,
+				cartProducts: updatedCart,
 			};
 		default:
 			return state;
 	}
 }
-
-// function calculateTotal(items) {
-// 	return items.reduce((sum, item) => {
-// 		return sum + (item.discountPrice || item.price);
-// 	}, 0);
-// }

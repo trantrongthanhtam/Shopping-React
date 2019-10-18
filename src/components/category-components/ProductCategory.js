@@ -6,9 +6,8 @@ import { fetchProducts } from "../../actions/products-actions";
 import styles from "../../css/category.module.css";
 
 class ProductCategory extends React.Component {
-	handleAddToCart = e => {
-		e.preventDefault();
-		this.props.addToCart();
+	handleAddToCart = (id,src,price) => {
+		this.props.addToCart(id,src,price);
 	};
 	componentDidMount() {
 		this.props.fetchProducts();
