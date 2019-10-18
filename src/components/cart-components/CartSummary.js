@@ -1,9 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../css/cart.module.css";
+import { connect } from "react-redux";
 
 class CartSumary extends React.Component {
 	render() {
+		const { cartProducts } = this.props;
+		let sum = cartProducts.reduce(
+			(acc, item) => acc + item.quantity * item.priceInNo,
+			0
+		);
+		const numberWithDot = sum => {
+			return sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		};
 		return (
 			<div className={styles.cartSum}>
 				<div className={styles.pickmore}>
@@ -20,7 +29,8 @@ class CartSumary extends React.Component {
 				<div className={styles.transFeeContent}>Miễn phí</div>
 				<div className={styles.sumupTitle}>TỔNG CỘNG</div>
 				<div className={styles.sumupValue}>
-					1.150.000<b>VNĐ</b>
+					{numberWithDot(sum)}
+					<b> VNĐ</b>
 				</div>
 				<div className={styles.checkout}>
 					<a href="#footer">
@@ -31,5 +41,13 @@ class CartSumary extends React.Component {
 		);
 	}
 }
-
-export default CartSumary;
+const mapStateToProps = state => {
+	return {
+		cartProducts: state.cartCount.cartProducts
+	};
+};
+const mapDispatchToProps = {};
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(CartSumary);

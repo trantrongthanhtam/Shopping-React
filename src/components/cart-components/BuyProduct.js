@@ -1,16 +1,26 @@
 import React from "react";
 import styles from "../../css/cart.module.css";
 import classNames from "classnames";
+import { connect } from "react-redux";
+import { upQuantity, downQuantity } from "../../actions/cart-actions";
 
 const cx = classNames.bind(styles);
 
 class BuyProduct extends React.Component {
 	render() {
-		const {id, src, price, quantity, onRemoveFromCart} = this.props;
+		const {
+			id,
+			src,
+			price,
+			quantity,
+			onRemoveFromCart,
+			upQuantity,
+			downQuantity
+		} = this.props;
 		return (
 			<div className={cx(styles.buyProduct, "row")}>
 				<div className={styles.buyImg}>
-					<img src={src} width='60px' height='70px' alt="Product" />
+					<img src={src} width="80px" height="100px" alt="Product" />
 				</div>
 				<div className={styles.buyInfo}>
 					<div className={styles.buyInfoTitle}>{id}</div>
@@ -23,8 +33,17 @@ class BuyProduct extends React.Component {
 				<div className={styles.buySize}>S</div>
 				<div className={styles.buyColor}>Đen</div>
 				<div className={styles.buyQuantity}>
-					<i className="fa fa-chevron-down" />  {quantity}  
-					<i className="fa fa-chevron-up" />
+					<i
+						className="fa fa-chevron-down"
+						style={{ cursor: "pointer" }}
+						onClick={() => downQuantity(id)}
+					/>
+					  {quantity}  
+					<i
+						className="fa fa-chevron-up"
+						style={{ cursor: "pointer" }}
+						onClick={() => upQuantity(id)}
+					/>
 				</div>
 				<div className={styles.buyPrice}>{price}</div>
 				<div className={styles.buyDelete}>
@@ -32,7 +51,8 @@ class BuyProduct extends React.Component {
 						style={{
 							fontSize: "16px"
 						}}
-						className="fa" onClick={()=> onRemoveFromCart(id)}
+						className="fa"
+						onClick={() => onRemoveFromCart(id)}
 					>
 						
 					</i>
@@ -41,5 +61,11 @@ class BuyProduct extends React.Component {
 		);
 	}
 }
-
-export default BuyProduct;
+const mapDispatchToProps = {
+	upQuantity,
+	downQuantity
+};
+export default connect(
+	null,
+	mapDispatchToProps
+)(BuyProduct);

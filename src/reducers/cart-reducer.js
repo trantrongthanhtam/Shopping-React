@@ -1,16 +1,21 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cart-actions";
+import {
+	ADD_TO_CART,
+	REMOVE_FROM_CART,
+	UP_QUANTITY,
+	DOWN_QUANTITY
+} from "../actions/cart-actions";
 const defaultState = {
 	total: 0,
 	cartProducts: []
 };
 export default function cartReducer(state = defaultState, action) {
-	const { cartProducts,total } = state;
+	const { cartProducts } = state;
 	let updatedCart;
+	let calculateTotal = 0;
 	switch (action.type) {
 		case ADD_TO_CART:
-			const { itemId, itemSrc, itemPrice } = action;
-			
-			
+			const { itemId, itemSrc, itemPrice, itemPriceInNo } = action;
+
 			const foundItem = cartProducts.find(item => item.id === itemId);
 			if (foundItem) {
 				// item has been added before
@@ -24,37 +29,87 @@ export default function cartReducer(state = defaultState, action) {
 					return item;
 				});
 			} else {
-				updatedCart = [...cartProducts,
+				updatedCart = [
+					...cartProducts,
 					{
 						id: itemId,
 						src: itemSrc,
-						price:itemPrice,
-						quantity: 1,
-					}];
+						price: itemPrice,
+						priceInNo: itemPriceInNo,
+						quantity: 1
+					}
+				];
 			}
-			
-			return { ...state, 
-				total: total + 1,
+			calculateTotal = updatedCart.reduce(
+				(sum, item) => sum + item.quantity,
+				0
+			);
+			return {
+				...state,
+				total: (calculateTotal =
+					calculateTotal < 0 ? 0 : calculateTotal),
 				cartProducts: updatedCart
-			 };
+			};
 
 		case REMOVE_FROM_CART:
-			const {removedItemId} = action;
-			let quantityRemoved=0;
+			const { removedItemId } = action;
+
+			updatedCart = cartProducts.filter(item => {
+				return item.id !== removedItemId;
+			});
+			calculateTotal = updatedCart.reduce(
+				(sum, item) => sum + item.quantity,
+				0
+			);
+			return {
+				...state,
+				total: (calculateTotal =
+					calculateTotal < 0 ? 0 : calculateTotal),
+				cartProducts: updatedCart
+			};
+		case UP_QUANTITY:
+			console.log("up");
+
+			const { itemUpQuantity } = action;
 			updatedCart = cartProducts.map(item => {
-				if (item.id === removedItemId) {
-					quantityRemoved = item.quantity;
-						return null;
-						
+				if (item.id === itemUpQuantity) {
+					return {
+						...item,
+						quantity: item.quantity + 1
+					};
 				}
 				return item;
 			});
-			let totalCount = state.total - quantityRemoved;
-			if (totalCount < 0) totalCount = 0;
+			calculateTotal = updatedCart.reduce(
+				(sum, item) => sum + item.quantity,
+				0
+			);
 			return {
 				...state,
-				total: totalCount,
-				cartProducts: updatedCart,
+				total: (calculateTotal =
+					calculateTotal < 0 ? 0 : calculateTotal),
+				cartProducts: updatedCart
+			};
+		case DOWN_QUANTITY:
+			const { itemDownQuantity } = action;
+			updatedCart = cartProducts.map(item => {
+				if (item.id === itemDownQuantity && item.quantity > 1) {
+					return {
+						...item,
+						quantity: item.quantity - 1
+					};
+				}
+				return item;
+			});
+			calculateTotal = updatedCart.reduce(
+				(sum, item) => sum + item.quantity,
+				0
+			);
+			return {
+				...state,
+				total: (calculateTotal =
+					calculateTotal < 0 ? 0 : calculateTotal),
+				cartProducts: updatedCart
 			};
 		default:
 			return state;

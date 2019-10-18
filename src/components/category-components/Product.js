@@ -4,13 +4,16 @@ import styles from "../../css/category.module.css";
 
 class Product extends React.Component {
 	render() {
-		const { src, id, price, onAddToCart } = this.props;
+		const { src, id, price, priceInNo, onAddToCart } = this.props;
 		return (
 			<div className={styles.product}>
 				<Link to="/detail">
 					<div className={styles.hide}>
 						<button
-							onClick={(e)=> {e.preventDefault(); return onAddToCart(id,src,price)}}
+							onClick={e => {
+								e.preventDefault();
+								return onAddToCart(id, src, price, priceInNo);
+							}}
 							className={styles.addCart}
 						>
 							ADD TO CART
