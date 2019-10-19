@@ -9,8 +9,8 @@ import { removeFromCart } from "../../actions/cart-actions";
 const cx = classNames.bind(styles);
 
 class CartInfo extends React.Component {
-	handleRemoveFromCart = id => {
-		this.props.removeFromCart(id);
+	handleRemoveFromCart = (id, color, size) => {
+		this.props.removeFromCart(id, color, size);
 	};
 	render() {
 		const { cartProducts } = this.props;

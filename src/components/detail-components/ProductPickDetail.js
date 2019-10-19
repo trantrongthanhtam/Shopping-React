@@ -7,18 +7,11 @@ import { connect } from "react-redux";
 const cx = classNames.bind(styles);
 
 class ProductPickDetail extends React.Component {
+	state = { color: "Đen", size: "M" };
 	handleAddToCart = e => {
-		const {
-			addToCart,
-			id,
-			src,
-			price,
-			priceInNo,
-			color,
-			size
-		} = this.props;
+		const { addToCart, id, src, price, priceInNo } = this.props;
 		e.preventDefault();
-		addToCart(id, src, price, priceInNo, color, size);
+		addToCart(id, src, price, priceInNo, this.state.color, this.state.size);
 	};
 	render() {
 		return (
@@ -29,8 +22,14 @@ class ProductPickDetail extends React.Component {
 							<div>MÀU SẮC</div>
 						</div>
 						<ul className={styles.color}>
-							<li> </li>
-							<li> </li>
+							<li onClick={() => this.setState({ color: "Đen" })}>
+								 
+							</li>
+							<li
+								onClick={() => this.setState({ color: "Hồng" })}
+							>
+								 
+							</li>
 						</ul>
 					</li>
 					<li className="col-6 col-md-12 order-md-2">
@@ -38,10 +37,18 @@ class ProductPickDetail extends React.Component {
 							<div>KÍCH CỠ</div>
 						</div>
 						<ul className={styles.sizing}>
-							<li>XS</li>
-							<li>S</li>
-							<li>M</li>
-							<li>L</li>
+							<li onClick={() => this.setState({ size: "XS" })}>
+								XS
+							</li>
+							<li onClick={() => this.setState({ size: "S" })}>
+								S
+							</li>
+							<li onClick={() => this.setState({ size: "M" })}>
+								M
+							</li>
+							<li onClick={() => this.setState({ size: "L" })}>
+								L
+							</li>
 						</ul>
 						<div className={styles.notify}>
 							Có sẵn tất cả kích cỡ. Sắp hết hàng

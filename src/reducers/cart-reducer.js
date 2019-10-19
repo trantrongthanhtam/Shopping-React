@@ -23,7 +23,12 @@ export default function cartReducer(state = defaultState, action) {
 				itemSize
 			} = action;
 
-			const foundItem = cartProducts.find(item => item.id === itemId);
+			const foundItem = cartProducts.find(
+				item =>
+					item.id === itemId &&
+					item.color === itemColor &&
+					item.size === itemSize
+			);
 			if (foundItem) {
 				// item has been added before
 				updatedCart = cartProducts.map(item => {
@@ -61,10 +66,14 @@ export default function cartReducer(state = defaultState, action) {
 			};
 
 		case REMOVE_FROM_CART:
-			const { removedItemId } = action;
+			const { removedItemId, removedItemSize, removedItemColor } = action;
 
 			updatedCart = cartProducts.filter(item => {
-				return item.id !== removedItemId;
+				return (
+					item.color !== removedItemColor ||
+					item.size !== removedItemSize ||
+					item.id !== removedItemId
+				);
 			});
 			calculateTotal = updatedCart.reduce(
 				(sum, item) => sum + item.quantity,

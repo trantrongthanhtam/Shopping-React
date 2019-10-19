@@ -59,7 +59,7 @@ class BuyProduct extends React.Component {
 							fontSize: "16px"
 						}}
 						className="fa"
-						onClick={() => onRemoveFromCart(id)}
+						onClick={() => onRemoveFromCart(id, color, size)}
 					>
 						
 					</i>

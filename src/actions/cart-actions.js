@@ -23,10 +23,12 @@ export function addToCart(
 	};
 }
 
-export function removeFromCart(id) {
+export function removeFromCart(id, color, size) {
 	return {
 		type: REMOVE_FROM_CART,
-		removedItemId: id
+		removedItemId: id,
+		removedItemColor: color,
+		removedItemSize: size
 	};
 }
 export function upQuantity(id) {
