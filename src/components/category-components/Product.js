@@ -4,10 +4,10 @@ import styles from "../../css/category.module.css";
 
 class Product extends React.Component {
 	render() {
-		const { src, id, price, priceInNo, onAddToCart } = this.props;
+		const { src, id, price, priceInNo, url, onAddToCart } = this.props;
 		return (
 			<div className={styles.product}>
-				<Link to="/detail">
+				<Link to={`/detail/${url}`}>
 					<div className={styles.hide}>
 						<button
 							onClick={e => {
@@ -18,7 +18,7 @@ class Product extends React.Component {
 						>
 							ADD TO CART
 						</button>
-						<img src={src} alt="product" />
+						<img src={`/img/${src}.png`} alt="product" />
 					</div>
 					<h3>{id}</h3>
 					<p>{price}</p>

@@ -13,6 +13,8 @@ class BuyProduct extends React.Component {
 			src,
 			price,
 			quantity,
+			size,
+			color,
 			onRemoveFromCart,
 			upQuantity,
 			downQuantity
@@ -20,7 +22,12 @@ class BuyProduct extends React.Component {
 		return (
 			<div className={cx(styles.buyProduct, "row")}>
 				<div className={styles.buyImg}>
-					<img src={src} width="80px" height="100px" alt="Product" />
+					<img
+						src={`/img/${src}.png`}
+						width="80px"
+						height="100px"
+						alt="Product"
+					/>
 				</div>
 				<div className={styles.buyInfo}>
 					<div className={styles.buyInfoTitle}>{id}</div>
@@ -30,8 +37,8 @@ class BuyProduct extends React.Component {
 						Không áp dụng được mã giảm giá
 					</div>
 				</div>
-				<div className={styles.buySize}>S</div>
-				<div className={styles.buyColor}>Đen</div>
+				<div className={styles.buySize}>{size}</div>
+				<div className={styles.buyColor}>{color}</div>
 				<div className={styles.buyQuantity}>
 					<i
 						className="fa fa-chevron-down"

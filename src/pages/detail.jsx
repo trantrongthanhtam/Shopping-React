@@ -1,3 +1,4 @@
+import Preloader from "../components/category-components/Preloader";
 import ProductDetail from "../components/detail-components/ProductDetail";
 import MoreInfo from "../components/detail-components/MoreInfo";
 import SimilarProducts from "../components/detail-components/SimilarProducts";
@@ -10,10 +11,13 @@ export default class Detail extends Component {
 	}
 
 	render() {
+		const { id } = this.props.match.params;
+
 		return (
 			<React.Fragment>
-				<ProductDetail />
-				<MoreInfo />
+				<Preloader />
+				<ProductDetail url={id} />
+				<MoreInfo url={id} />
 				<SimilarProducts />
 			</React.Fragment>
 		);

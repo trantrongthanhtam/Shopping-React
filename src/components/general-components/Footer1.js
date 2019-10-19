@@ -17,15 +17,15 @@ class Footer1 extends React.Component {
 			>
 				<p>THANH TOÁN</p>
 				<img
-					src="./img/1478871491-payment-method-master-card.png"
+					src="/img/1478871491-payment-method-master-card.png"
 					alt="master card"
 				/>
 				<img
-					src="./img/1478871544-payment-method-card-visa.png"
+					src="/img/1478871544-payment-method-card-visa.png"
 					alt="visa card"
 				/>
 				<img
-					src="./img/1478872070-dollar-bills-cut.png"
+					src="/img/1478872070-dollar-bills-cut.png"
 					alt="Dollar bills"
 				/>
 			</div>

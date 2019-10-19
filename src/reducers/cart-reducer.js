@@ -14,7 +14,14 @@ export default function cartReducer(state = defaultState, action) {
 	let calculateTotal = 0;
 	switch (action.type) {
 		case ADD_TO_CART:
-			const { itemId, itemSrc, itemPrice, itemPriceInNo } = action;
+			const {
+				itemId,
+				itemSrc,
+				itemPrice,
+				itemPriceInNo,
+				itemColor,
+				itemSize
+			} = action;
 
 			const foundItem = cartProducts.find(item => item.id === itemId);
 			if (foundItem) {
@@ -36,6 +43,8 @@ export default function cartReducer(state = defaultState, action) {
 						src: itemSrc,
 						price: itemPrice,
 						priceInNo: itemPriceInNo,
+						color: itemColor,
+						size: itemSize,
 						quantity: 1
 					}
 				];

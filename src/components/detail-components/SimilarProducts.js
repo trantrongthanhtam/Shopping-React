@@ -25,7 +25,7 @@ class SimilarProducts extends React.Component {
 				<div className={cx(styles.product, styles.like)}>
 					<Link to="/detail">
 						<div className={styles.hide}>
-							<img alt="product" src="img/product-1.png" />
+							<img alt="product" src="/img/product-1.png" />
 						</div>
 						<h3>Đầm SP911</h3>
 						<p>349.000đ</p>
@@ -34,7 +34,7 @@ class SimilarProducts extends React.Component {
 				<div className={cx(styles.product, styles.like)}>
 					<Link to="/detail">
 						<div className={styles.hide}>
-							<img alt="product" src="img/product-5.png" />
+							<img alt="product" src="/img/product-5.png" />
 						</div>
 						<h3>Đầm SP911</h3>
 						<p>349.000đ</p>
@@ -43,7 +43,7 @@ class SimilarProducts extends React.Component {
 				<div className={cx(styles.product, styles.like)}>
 					<Link to="/detail">
 						<div className={styles.hide}>
-							<img alt="product" src="img/product-3.png" />
+							<img alt="product" src="/img/product-3.png" />
 						</div>
 						<h3>Đầm SP911</h3>
 						<p>349.000đ</p>
@@ -52,7 +52,7 @@ class SimilarProducts extends React.Component {
 				<div className={cx(styles.product, styles.like)}>
 					<Link to="/detail">
 						<div className={styles.hide}>
-							<img alt="product" src="img/product-4.png" />
+							<img alt="product" src="/img/product-4.png" />
 						</div>
 						<h3>Đầm SP911</h3>
 						<p>349.000đ</p>

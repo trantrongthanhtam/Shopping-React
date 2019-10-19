@@ -8,13 +8,17 @@ const cx = classNames.bind(styles);
 
 class ProductPickDetail extends React.Component {
 	handleAddToCart = e => {
+		const {
+			addToCart,
+			id,
+			src,
+			price,
+			priceInNo,
+			color,
+			size
+		} = this.props;
 		e.preventDefault();
-		this.props.addToCart(
-			"Đầm SP919",
-			"img/product-9.png",
-			"309.000đ",
-			309000
-		);
+		addToCart(id, src, price, priceInNo, color, size);
 	};
 	render() {
 		return (

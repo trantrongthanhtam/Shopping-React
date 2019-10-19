@@ -17,11 +17,11 @@ class Footer2 extends React.Component {
 			>
 				<p>DỊCH VỤ VẬN CHUYỂN</p>
 				<img
-					src="./img/dd-698324-ade-3-b-5611-a-81-d-8-abb-9-c-40286.png"
+					src="/img/dd-698324-ade-3-b-5611-a-81-d-8-abb-9-c-40286.png"
 					alt=""
 				/>
-				<img src="./img/rvst-zjw-1404786181.png" alt="" />
-				<img src="./img/22040.png" alt="" />
+				<img src="/img/rvst-zjw-1404786181.png" alt="" />
+				<img src="/img/22040.png" alt="" />
 			</div>
 		);
 	}

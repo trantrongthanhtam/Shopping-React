@@ -6,16 +6,17 @@ const cx = classNames.bind(styles);
 
 class ImgShow extends React.Component {
 	render() {
+		const { src } = this.props;
 		return (
 			<div className={cx(styles.imgShow, "col-md-5")}>
 				<div className={styles.mainImg}>
-					<img alt="product" src="./img/main-img@2x.png" />
+					<img alt="product" src={`/img/${src}@3x.png`} />
 				</div>
 				<div className={styles.subImgSeries}>
-					<img alt="product" src="./img/sub-img-1@2x.png" />
-					<img alt="product" src="./img/sub-img-2@2x.png" />
-					<img alt="product" src="./img/sub-img-3@2x.png" />
-					<img alt="product" src="./img/sub-img-4@2x.png" />
+					<img alt="product" src={`/img/${src}.png`} />
+					<img alt="product" src={`/img/${src}.png`} />
+					<img alt="product" src={`/img/${src}.png`} />
+					<img alt="product" src={`/img/${src}.png`} />
 				</div>
 			</div>
 		);

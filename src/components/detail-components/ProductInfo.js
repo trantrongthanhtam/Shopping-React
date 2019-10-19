@@ -6,11 +6,12 @@ const cx = classNames.bind(styles);
 
 class ProductInfo extends React.Component {
 	render() {
+		const { id, price } = this.props;
 		return (
 			<div className={cx(styles.productInfo, "col-md-4")}>
 				<div className={styles.productTitle}>
-					<h3>ĐẦM ÔM A HỞ VAI</h3>
-					<p>1.150.000 VNĐ</p>
+					<h3>{id}</h3>
+					<p>{price}</p>
 				</div>
 				<p>
 					Bạn đã có chiếc đầm hở vai đang làm mưa gió trong mùa hè thu

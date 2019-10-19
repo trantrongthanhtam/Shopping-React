@@ -26,7 +26,10 @@ function App() {
 							component={Index}
 						/>
 						<Route path="/category" component={Category} />
-						<Route path="/detail" component={Detail} />
+						<Route
+							path="/detail/:id"
+							render={props => <Detail {...props} />}
+						/>
 						<Route path="/cart" component={Cart} />
 					</Switch>
 					<BoxContainer />

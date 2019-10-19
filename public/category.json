@@ -5,81 +5,92 @@
 	"total": 11,
 	"items": [
 		{
-			"src": "img/product-1.png",
+			"src": "product-1",
 			"sizes": "192x192",
 			"id": "Đầm SP911",
 			"price": "249.000đ",
-			"priceInNo": 249000
+			"priceInNo": 249000,
+			"url": "dam-SP911"
 		},
 		{
-			"src": "img/product-2.png",
+			"src": "product-2",
 			"sizes": "192x192",
 			"id": "Đầm SP912",
 			"price": "319.000đ",
-			"priceInNo": 319000
+			"priceInNo": 319000,
+			"url": "dam-SP912"
 		},
 		{
-			"src": "img/product-3.png",
+			"src": "product-3",
 			"sizes": "192x192",
 			"id": "Đầm SP913",
 			"price": "259.000đ",
-			"priceInNo": 259000
+			"priceInNo": 259000,
+			"url": "dam-SP913"
 		},
 		{
-			"src": "img/product-4.png",
+			"src": "product-4",
 			"sizes": "192x192",
 			"id": "Đầm SP914",
 			"price": "409.000đ",
-			"priceInNo": 409000
+			"priceInNo": 409000,
+			"url": "dam-SP914"
 		},
 		{
-			"src": "img/product-5.png",
+			"src": "product-5",
 			"sizes": "192x192",
 			"id": "Đầm SP915",
 			"price": "409.000đ",
-			"priceInNo": 409000
+			"priceInNo": 409000,
+			"url": "dam-SP915"
 		},
 		{
-			"src": "img/product-6.png",
+			"src": "product-6",
 			"sizes": "192x192",
 			"id": "Đầm SP916",
 			"price": "359.000đ",
-			"priceInNo": 359000
+			"priceInNo": 359000,
+			"url": "dam-SP916"
 		},
 		{
-			"src": "img/product-7.png",
+			"src": "product-7",
 			"sizes": "192x192",
 			"id": "Đầm SP917",
 			"price": "349.000đ",
-			"priceInNo": 349000
+			"priceInNo": 349000,
+			"url": "dam-SP917"
 		},
 		{
-			"src": "img/product-8.png",
+			"src": "product-8",
 			"sizes": "192x192",
 			"id": "Đầm SP918",
 			"price": "299.000đ",
-			"priceInNo": 299000
+			"priceInNo": 299000,
+			"url": "dam-SP918"
 		},
 		{
-			"src": "img/product-9.png",
+			"src": "product-9",
 			"sizes": "192x192",
 			"id": "Đầm SP919",
 			"price": "309.000đ",
-			"priceInNo": 309000
+			"priceInNo": 309000,
+			"url": "dam-SP919"
 		},
 		{
-			"src": "img/product-10.png",
+			"src": "product-10",
 			"sizes": "192x192",
 			"id": "Đầm SP920",
 			"price": "349.000đ",
-			"priceInNo": 349000
+			"priceInNo": 349000,
+			"url": "dam-SP920"
 		},
 		{
-			"src": "img/product-11.png",
+			"src": "product-11",
 			"sizes": "192x192",
 			"id": "Đầm SP921",
 			"price": "339.000đ",
-			"priceInNo": 339000
+			"priceInNo": 339000,
+			"url": "dam-SP921"
 		}
 	]
 }

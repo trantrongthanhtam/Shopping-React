@@ -4,13 +4,22 @@ export const UP_QUANTITY = "UP_QUANTITY";
 export const DOWN_QUANTITY = "DOWN_QUANTITY";
 
 //action creator
-export function addToCart(id, src, price, priceInNo) {
+export function addToCart(
+	id,
+	src,
+	price,
+	priceInNo,
+	color = "Đen",
+	size = "M"
+) {
 	return {
 		type: ADD_TO_CART,
 		itemId: id,
 		itemSrc: src,
 		itemPrice: price,
-		itemPriceInNo: priceInNo
+		itemPriceInNo: priceInNo,
+		itemColor: color,
+		itemSize: size
 	};
 }
 

@@ -16,8 +16,8 @@ class Footer3 extends React.Component {
 				)}
 			>
 				<p>ĐƯỢC CHỨNG NHẬN</p>
-				<img src="./img/dathongbao.png" alt="" />
-				<img src="./img/tin-dung-02-01.png" alt="" />
+				<img src="/img/dathongbao.png" alt="" />
+				<img src="/img/tin-dung-02-01.png" alt="" />
 			</div>
 		);
 	}
