@@ -80,6 +80,7 @@ a {
 .product {
 	text-align: center;
 	width: 33.33%;
+	height: 365px;
 	padding: 10px;
 	box-sizing: border-box;
 }
