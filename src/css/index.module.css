@@ -15,15 +15,18 @@ body {
 }
 
 p {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 li {
-	font-size: 11px;
+	font-size: 0.6875rem;
 }
 
 a {
 	color: black;
+}
+img {
+	overflow: hidden;
 }
 
 .navbutton {
@@ -36,7 +39,7 @@ a {
 .navbutton div {
 	padding: 20px 35px;
 	cursor: pointer;
-	font-size: 25px;
+	font-size: 1.5625rem;
 	background-color: white;
 }
 
@@ -46,7 +49,7 @@ a {
 
 .bannerHome div h1 {
 	text-transform: uppercase;
-	font-size: 48px;
+	font-size: 2rem;
 	font-weight: bolder;
 	font-style: normal;
 	font-stretch: normal;
@@ -62,18 +65,17 @@ a {
 	display: inline-block;
 	padding: 15px 20px;
 	margin-top: 15px;
-	margin-left: 250px;
 	background-color: white;
 }
 
 .bannerHome div p:nth-child(1) {
 	line-height: 40px;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .bannerHome div p:last-child {
 	margin-top: 170px;
-	font-size: 10px;
+	font-size: 0.625rem;
 }
 
 .banner {
@@ -131,7 +133,7 @@ a {
 }
 
 .bannerHext > h1 {
-	font-size: 50px;
+	font-size: 3.125rem;
 	padding: 5px;
 	margin: 0;
 }
@@ -178,12 +180,12 @@ a {
 
 .column3 p:first-child {
 	font-family: utm-avo-bold;
-	font-size: 12px;
+	font-size: 0.75rem;
 	text-transform: uppercase;
 }
 
 .column3 p:last-child {
-	font-size: 10px;
+	font-size: 0.625rem;
 	font-weight: normal;
 }
 
@@ -199,6 +201,7 @@ a {
 
 .imageSeries {
 	display: flex;
+	overflow: hidden;
 	flex-flow: row wrap;
 	justify-content: center;
 	width: 100%;
@@ -206,6 +209,10 @@ a {
 	box-sizing: border-box;
 	margin-bottom: 60px;
 }
+
+/* .imageSeries img {
+	max-width: 100%;
+} */
 
 .imageSeries .imgContainer {
 	margin: 7px;
@@ -219,13 +226,13 @@ a {
 
 .overlay p:first-child {
 	font-family: utm-avo-bold;
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin: 0;
 }
 
 .overlay p:last-child {
 	font-family: utm-avo-bold;
-	font-size: 24px;
+	font-size: 1.5rem;
 	margin: 0;
 }
 
@@ -304,19 +311,19 @@ a {
 
 .column2 p:nth-child(1) {
 	font-family: utm-avo-bold;
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin: 5px;
 }
 
 .column2 p:nth-child(2) {
 	font-family: utm-avo-bold;
-	font-size: 24px;
+	font-size: 1.5rem;
 	margin: 0;
 }
 
 .column2 p:nth-child(3) {
 	font-family: utm-avo;
-	font-size: 12px;
+	font-size: 0.75rem;
 }
 
 .box5 {
@@ -357,7 +364,7 @@ a {
 	text-transform: uppercase;
 	margin: 0;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
 	.shortTalk {
 		flex-flow: column;
 	}
@@ -367,7 +374,43 @@ a {
 	.shortTalk > * {
 		width: 100vw;
 	}
+	.shortTalk img {
+		width: 100%;
+	}
 	.column3 {
 		padding: 20px;
+	}
+	.bannerHome {
+		padding: 20px 0;
+		height: 500px;
+	}
+	.bannerHome div a {
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.flexContainer {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.flexContainer > * {
+		width: 100%;
+		margin: 0;
+	}
+
+	.column2::after {
+		display: none;
+	}
+	.controlContainer {
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		z-index: 1;
+		bottom: 0;
+		width: 30%;
+		height: 10%;
 	}
 }

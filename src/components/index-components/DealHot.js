@@ -19,12 +19,7 @@ class DealHot extends React.Component {
 				>
 					Đừng Bỏ Lỡ - Deal Hot Trong Ngày
 				</p>
-				<div
-					className={cx(styles.clearFix, styles.flexContainer)}
-					style={{
-						height: "443px"
-					}}
-				>
+				<div className={cx(styles.clearFix, styles.flexContainer)}>
 					<div className={cx(styles.column2, styles.box4)}>
 						<p>GIẢM 20%</p>
 						<p>CÁC SẢN PHẨM ÁO</p>

@@ -388,6 +388,9 @@ a {
 	.shortTalk > * {
 		width: 100vw;
 	}
+	.shortTalk img {
+		width: 100%;
+	}
 	.column3 {
 		padding: 20px;
 	}
@@ -400,5 +403,25 @@ a {
 	.product-pickup button {
 		width: 100%;
 		margin: 0px 30% 20px;
+	}
+	.addCart {
+		position: absolute;
+		font-family: utm-avo;
+		font-size: 12px;
+		width: 80%;
+		margin: 0 auto;
+		height: 50px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+		z-index: 1;
+	}
+}
+
+@media screen and (max-width: 527px) {
+	.product {
+		width: 100%;
 	}
 }

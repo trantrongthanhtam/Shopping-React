@@ -1,3 +1,4 @@
+import Preloader from "../components/category-components/Preloader";
 import Carousel from "../components/category-components/Carousel";
 import MenuCategory from "../components/category-components/MenuCategory";
 import ShortTalk3 from "../components/category-components/ShortTalk3";
@@ -13,6 +14,7 @@ export default class Category extends Component {
 	render() {
 		return (
 			<React.Fragment>
+				<Preloader />
 				<Carousel />
 				<MenuCategory />
 				<ShortTalk3 />

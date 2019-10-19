@@ -11,11 +11,20 @@ export function fetchProducts() {
 			.then(res => res.json())
 			.then(json => {
 				console.log("json", json.status);
-				
-				dispatch({ type: RECEIVE_PRODUCTS, data: json });
+				setTimeout(() => {
+					dispatch({
+						type: RECEIVE_PRODUCTS,
+						data: json,
+						visible: false
+					});
+				}, 2000);
 			})
 			.catch(error => {
-				dispatch({ type: FETCH_PRODUCTS_FAILED, error });
+				dispatch({
+					type: FETCH_PRODUCTS_FAILED,
+					visible: false,
+					error
+				});
 			});
 	};
 }

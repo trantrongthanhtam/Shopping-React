@@ -9,11 +9,11 @@ import { removeFromCart } from "../../actions/cart-actions";
 const cx = classNames.bind(styles);
 
 class CartInfo extends React.Component {
-	handleRemoveFromCart = (id) => {
+	handleRemoveFromCart = id => {
 		this.props.removeFromCart(id);
-	}
+	};
 	render() {
-		const {cartProducts} = this.props;
+		const { cartProducts } = this.props;
 		return (
 			<div className={styles.cart}>
 				<div className={styles.cartTitle}>GIỎ HÀNG</div>
@@ -27,24 +27,31 @@ class CartInfo extends React.Component {
 						<div className={styles.buyPrice}>GIÁ</div>
 						<div className={styles.buyDelete} />
 					</div>
-					{cartProducts.map(item=> 
-						<BuyProduct key = {item.id} {...item} onRemoveFromCart = {this.handleRemoveFromCart}/>
-					)}
-					
+					{cartProducts.map(item => (
+						<BuyProduct
+							key={item.id}
+							{...item}
+							onRemoveFromCart={this.handleRemoveFromCart}
+						/>
+					))}
 				</div>
+				<hr style={{ width: "100%", margin: "5px 0px -5px 0px" }}></hr>
 				<CartSummary></CartSummary>
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return {
 		cartProducts: state.cartCount.cartProducts
-	}
-}
-const mapDispatchToProps={
-	removeFromCart,
-}
+	};
+};
+const mapDispatchToProps = {
+	removeFromCart
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartInfo);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(CartInfo);
