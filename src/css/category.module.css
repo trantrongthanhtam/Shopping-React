@@ -408,7 +408,8 @@ a {
 		position: absolute;
 		font-family: utm-avo;
 		font-size: 12px;
-		width: 80%;
+		text-align: center;
+		width: 219px;
 		margin: 0 auto;
 		height: 50px;
 		bottom: 0px;
