@@ -10,7 +10,12 @@ class ImgShow extends React.Component {
 		return (
 			<div className={cx(styles.imgShow, "col-md-5")}>
 				<div className={styles.mainImg}>
-					<img alt="product" src={`/img/${src}@3x.png`} />
+					<img
+						alt="product"
+						src={`/img/${src}@3x.png`}
+						width="386.66px"
+						height="501.41px"
+					/>
 				</div>
 				<div className={styles.subImgSeries}>
 					<img alt="product" src={`/img/${src}.png`} />
