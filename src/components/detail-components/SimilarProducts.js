@@ -9,7 +9,7 @@ class SimilarProducts extends React.Component {
 	render() {
 		const { products } = this.props;
 		const clone = [...products];
-		shuffle(clone);
+		//shuffle(clone);
 		return (
 			<div className={cx(styles.clearFix, styles.category)}>
 				<p

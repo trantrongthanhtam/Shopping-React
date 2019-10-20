@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 class SimilarProducts extends React.Component {
 	render() {
 		const { products } = this.props;
-		shuffle(products);
+		//shuffle(products);
 		return (
 			<div className={cx(styles.clearFix, styles.category)}>
 				<p
