@@ -25,14 +25,14 @@ export default function cartReducer(state = defaultState, action) {
 
 			const foundItem = cartProducts.find(
 				item =>
-					item.id === itemId &&
+					item.name === itemId &&
 					item.color === itemColor &&
 					item.size === itemSize
 			);
 			if (foundItem) {
 				// item has been added before
 				updatedCart = cartProducts.map(item => {
-					if (item.id === itemId) {
+					if (item.name === itemId) {
 						return {
 							...item,
 							quantity: item.quantity + 1
@@ -44,7 +44,8 @@ export default function cartReducer(state = defaultState, action) {
 				updatedCart = [
 					...cartProducts,
 					{
-						id: itemId,
+						id: `${itemId + "-" + itemColor + "-" + itemSize}`,
+						name: itemId,
 						src: itemSrc,
 						price: itemPrice,
 						priceInNo: itemPriceInNo,
@@ -69,12 +70,14 @@ export default function cartReducer(state = defaultState, action) {
 			const { removedItemId, removedItemSize, removedItemColor } = action;
 
 			updatedCart = cartProducts.filter(item => {
-				return (
-					item.color !== removedItemColor ||
-					item.size !== removedItemSize ||
-					item.id !== removedItemId
+				return !(
+					item.color === removedItemColor &&
+					item.size === removedItemSize &&
+					item.name === removedItemId
 				);
 			});
+			console.log(updatedCart);
+
 			calculateTotal = updatedCart.reduce(
 				(sum, item) => sum + item.quantity,
 				0
@@ -90,7 +93,7 @@ export default function cartReducer(state = defaultState, action) {
 
 			const { itemUpQuantity } = action;
 			updatedCart = cartProducts.map(item => {
-				if (item.id === itemUpQuantity) {
+				if (item.name === itemUpQuantity) {
 					return {
 						...item,
 						quantity: item.quantity + 1
@@ -111,7 +114,7 @@ export default function cartReducer(state = defaultState, action) {
 		case DOWN_QUANTITY:
 			const { itemDownQuantity } = action;
 			updatedCart = cartProducts.map(item => {
-				if (item.id === itemDownQuantity && item.quantity > 1) {
+				if (item.name === itemDownQuantity && item.quantity > 1) {
 					return {
 						...item,
 						quantity: item.quantity - 1

@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 class BuyProduct extends React.Component {
 	render() {
 		const {
-			id,
+			name,
 			src,
 			price,
 			quantity,
@@ -30,7 +30,7 @@ class BuyProduct extends React.Component {
 					/>
 				</div>
 				<div className={styles.buyInfo}>
-					<div className={styles.buyInfoTitle}>{id}</div>
+					<div className={styles.buyInfoTitle}>{name}</div>
 					<div className={styles.buyMoreInfo}>
 						Giao trong 3-5 ngày làm việc
 						<br />
@@ -43,13 +43,13 @@ class BuyProduct extends React.Component {
 					<i
 						className="fa fa-chevron-down"
 						style={{ cursor: "pointer" }}
-						onClick={() => downQuantity(id)}
+						onClick={() => downQuantity(name)}
 					/>
 					  {quantity}  
 					<i
 						className="fa fa-chevron-up"
 						style={{ cursor: "pointer" }}
-						onClick={() => upQuantity(id)}
+						onClick={() => upQuantity(name)}
 					/>
 				</div>
 				<div className={styles.buyPrice}>{price}</div>
@@ -59,7 +59,7 @@ class BuyProduct extends React.Component {
 							fontSize: "16px"
 						}}
 						className="fa"
-						onClick={() => onRemoveFromCart(id, color, size)}
+						onClick={() => onRemoveFromCart(name, color, size)}
 					>
 						
 					</i>

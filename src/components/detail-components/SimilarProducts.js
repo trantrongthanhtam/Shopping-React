@@ -32,7 +32,7 @@ class SimilarProducts extends React.Component {
 							return (
 								<div
 									className={cx(styles.product, styles.like)}
-									key={product.id}
+									key={product.url}
 								>
 									<Link to={`/detail/${product.url}`}>
 										<div className={styles.hide}>

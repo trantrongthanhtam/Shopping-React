@@ -27,7 +27,10 @@ class SimilarProducts extends React.Component {
 				{products.map((product, index) => {
 					if (index % 3 === 0) {
 						return (
-							<div className={cx(styles.product, styles.like)}>
+							<div
+								className={cx(styles.product, styles.like)}
+								key={product.url}
+							>
 								<Link to={`/detail/${product.url}`}>
 									<div className={styles.hide}>
 										<img

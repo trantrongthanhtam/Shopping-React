@@ -24,6 +24,7 @@ class ProductPickDetail extends React.Component {
 		e.preventDefault();
 		addToCart(id, src, price, priceInNo, this.state.color, this.state.size);
 	};
+
 	render() {
 		return (
 			<div className={cx(styles.productPickup, "col-md-3")}>
