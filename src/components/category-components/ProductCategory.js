@@ -14,25 +14,34 @@ class ProductCategory extends React.Component {
 	}
 
 	render() {
-		const { products } = this.props;
+		const { products, colorFilter } = this.props;
+		console.log(colorFilter);
 
 		return (
 			<div className={styles.productContent}>
-				{products.map(product => (
-					<Product
-						key={product.id}
-						{...product}
-						onAddToCart={this.handleAddToCart}
-					/>
-				))}
+				{products.map(product => {
+					if (
+						colorFilter === "all" ||
+						product.colorFilter === colorFilter
+					) {
+						return (
+							<Product
+								key={product.id}
+								{...product}
+								onAddToCart={this.handleAddToCart}
+							/>
+						);
+					} else return null;
+				})}
 			</div>
 		);
 	}
 }
 
-function mapStateToProps({ products }) {
+function mapStateToProps({ products, colorFilter }) {
 	return {
-		products: products.items
+		products: products.items,
+		colorFilter: colorFilter.colorFilter
 	};
 }
 

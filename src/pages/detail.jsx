@@ -1,13 +1,15 @@
-import Preloader from "../components/category-components/Preloader";
 import ProductDetail from "../components/detail-components/ProductDetail";
 import MoreInfo from "../components/detail-components/MoreInfo";
 import SimilarProducts from "../components/detail-components/SimilarProducts";
+import { fetchProducts } from "../actions/products-actions";
 import React, { Component } from "react";
 import "../css/bootstrap.css";
+import { connect } from "react-redux";
 
-export default class Detail extends Component {
+class Detail extends Component {
 	componentDidMount() {
 		window.scrollTo(0, 0);
+		this.props.fetchProducts();
 	}
 
 	render() {
@@ -15,11 +17,20 @@ export default class Detail extends Component {
 
 		return (
 			<React.Fragment>
-				<Preloader />
 				<ProductDetail url={id} />
 				<MoreInfo url={id} />
-				<SimilarProducts />
+				<SimilarProducts products={this.props.products} />
 			</React.Fragment>
 		);
 	}
 }
+const mapStateToProps = ({ products }) => {
+	return {
+		products: products.items
+	};
+};
+const mapDispatchToProps = { fetchProducts };
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Detail);

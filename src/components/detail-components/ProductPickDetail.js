@@ -7,7 +7,18 @@ import { connect } from "react-redux";
 const cx = classNames.bind(styles);
 
 class ProductPickDetail extends React.Component {
-	state = { color: "Đen", size: "M" };
+	state = {
+		color: "Đen",
+		size: "M",
+		colorActive: 0,
+		sizeActive: 2,
+		activeColor(id) {
+			return id === this.colorActive ? styles.activeColor : "";
+		},
+		activeSize(id) {
+			return id === this.sizeActive ? styles.activeSize : "";
+		}
+	};
 	handleAddToCart = e => {
 		const { addToCart, id, src, price, priceInNo } = this.props;
 		e.preventDefault();
@@ -22,11 +33,25 @@ class ProductPickDetail extends React.Component {
 							<div>MÀU SẮC</div>
 						</div>
 						<ul className={styles.color}>
-							<li onClick={() => this.setState({ color: "Đen" })}>
+							<li
+								className={this.state.activeColor(0)}
+								onClick={() =>
+									this.setState({
+										color: "Đen",
+										colorActive: 0
+									})
+								}
+							>
 								 
 							</li>
 							<li
-								onClick={() => this.setState({ color: "Hồng" })}
+								className={this.state.activeColor(1)}
+								onClick={() =>
+									this.setState({
+										color: "Hồng",
+										colorActive: 1
+									})
+								}
 							>
 								 
 							</li>
@@ -37,16 +62,36 @@ class ProductPickDetail extends React.Component {
 							<div>KÍCH CỠ</div>
 						</div>
 						<ul className={styles.sizing}>
-							<li onClick={() => this.setState({ size: "XS" })}>
+							<li
+								className={this.state.activeSize(0)}
+								onClick={() =>
+									this.setState({ size: "XS", sizeActive: 0 })
+								}
+							>
 								XS
 							</li>
-							<li onClick={() => this.setState({ size: "S" })}>
+							<li
+								className={this.state.activeSize(1)}
+								onClick={() =>
+									this.setState({ size: "S", sizeActive: 1 })
+								}
+							>
 								S
 							</li>
-							<li onClick={() => this.setState({ size: "M" })}>
+							<li
+								className={this.state.activeSize(2)}
+								onClick={() =>
+									this.setState({ size: "M", sizeActive: 2 })
+								}
+							>
 								M
 							</li>
-							<li onClick={() => this.setState({ size: "L" })}>
+							<li
+								className={this.state.activeSize(3)}
+								onClick={() =>
+									this.setState({ size: "L", sizeActive: 3 })
+								}
+							>
 								L
 							</li>
 						</ul>

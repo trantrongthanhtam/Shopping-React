@@ -350,6 +350,9 @@ body {
 .color li:nth-child(2) {
 	background-color: pink;
 }
+.activeColor {
+	box-shadow: 0px 0px 5px;
+}
 .sizing {
 	display: flex;
 	flex-wrap: wrap;
@@ -368,7 +371,11 @@ body {
 }
 
 .sizing li:hover {
-	background-color: black;
+	background-color: grey;
+	color: white;
+}
+.activeSize {
+	background-color: #000;
 	color: white;
 }
 .question {

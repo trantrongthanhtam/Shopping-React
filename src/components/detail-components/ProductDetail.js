@@ -1,4 +1,5 @@
 import React from "react";
+import Preloader from "../../components/category-components/Preloader";
 import ProductInfo from "./ProductInfo";
 import ImgShow from "./ImgShow";
 import ProductPickDetail from "./ProductPickDetail";
@@ -20,6 +21,7 @@ class ProductDetail extends React.Component {
 
 		return (
 			<div className={cx(styles.productDetail, "row")}>
+				<Preloader />
 				<ProductInfo {...product} />
 				<ImgShow {...product} />
 				<ProductPickDetail {...product} />

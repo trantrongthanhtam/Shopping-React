@@ -15,8 +15,6 @@ class Carousel extends React.Component {
 		this.setState({ activeSlide: parseInt(activeS) });
 	};
 	render() {
-		console.log(this.state.activeSlide);
-
 		return (
 			<div
 				id="demo"

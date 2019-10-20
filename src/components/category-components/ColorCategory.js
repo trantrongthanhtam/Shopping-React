@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "../../css/category.module.css";
 import classNames from "classnames";
+import { fetchProducts } from "../../actions/products-actions";
+import { colorFilter } from "../../actions/filter-actions";
+import { connect } from "react-redux";
 
 const cx = classNames.bind(styles);
 
 class ColorCategory extends React.Component {
 	state = {
-		cssUpdate: ["fa-angle-right", "collapse"]
+		cssUpdate: ["fa-angle-right", "collapse"],
+		color: "all"
 	};
+
 	handleExpandMenu = () => {
 		let update =
 			this.state.cssUpdate[0] === "fa-angle-right"
@@ -15,6 +20,29 @@ class ColorCategory extends React.Component {
 				: ["fa-angle-right", "collapse"];
 		this.setState({ cssUpdate: update });
 	};
+
+	handleOrange = () => {
+		this.setState({ color: "cam" });
+	};
+	handleBlue = () => {
+		this.setState({ color: "xanh dương" });
+	};
+	handleMultiColor = () => {
+		this.setState({ color: "nhiều màu" });
+	};
+	handleBrown = () => {
+		this.setState({ color: "nâu" });
+	};
+	handleWhite = () => {
+		this.setState({ color: "trắng" });
+	};
+	handleBlack = () => {
+		this.setState({ color: "đen" });
+	};
+	componentDidUpdate(prevProps, prevState) {
+		this.props.colorFilter(this.state.color);
+	}
+
 	render() {
 		const { cssUpdate } = this.state;
 		return (
@@ -32,25 +60,34 @@ class ColorCategory extends React.Component {
 				</div>
 				<ul className={cx(styles.subMenu, cssUpdate[1])} id="no5">
 					<li>
-						<a href="#footer">Be</a>
+						<a href="#orange" onClick={this.handleOrange}>
+							Cam
+						</a>
 					</li>
 					<li>
-						<a href="#footer">Bạc</a>
+						<a onClick={this.handleBlue} href="#blue">
+							Xanh dương
+						</a>
 					</li>
 					<li>
-						<a href="#footer">Cam</a>
+						<a onClick={this.handleMultiColor} href="#multi-color">
+							Nhiều màu
+						</a>
 					</li>
 					<li>
-						<a href="#footer">Hồng</a>
+						<a onClick={this.handleBrown} href="#brown">
+							Nâu
+						</a>
 					</li>
 					<li>
-						<a href="#footer">Nhiều màu</a>
+						<a onClick={this.handleWhite} href="#white">
+							Trắng
+						</a>
 					</li>
 					<li>
-						<a href="#footer">Nâu</a>
-					</li>
-					<li>
-						<a href="#footer">Trắng</a>
+						<a onClick={this.handleBlack} href="#black">
+							Đen
+						</a>
 					</li>
 				</ul>
 			</li>
@@ -58,4 +95,8 @@ class ColorCategory extends React.Component {
 	}
 }
 
-export default ColorCategory;
+const mapDispatchToProps = { fetchProducts, colorFilter };
+export default connect(
+	null,
+	mapDispatchToProps
+)(ColorCategory);

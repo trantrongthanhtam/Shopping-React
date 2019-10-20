@@ -10,7 +10,8 @@
 			"id": "Đầm SP911",
 			"price": "249.000đ",
 			"priceInNo": 249000,
-			"url": "dam-SP911"
+			"url": "dam-SP911",
+			"colorFilter": "đen"
 		},
 		{
 			"src": "product-2",
@@ -18,7 +19,8 @@
 			"id": "Đầm SP912",
 			"price": "319.000đ",
 			"priceInNo": 319000,
-			"url": "dam-SP912"
+			"url": "dam-SP912",
+			"colorFilter": "trắng"
 		},
 		{
 			"src": "product-3",
@@ -26,7 +28,8 @@
 			"id": "Đầm SP913",
 			"price": "259.000đ",
 			"priceInNo": 259000,
-			"url": "dam-SP913"
+			"url": "dam-SP913",
+			"colorFilter": "nhiều màu"
 		},
 		{
 			"src": "product-4",
@@ -34,7 +37,8 @@
 			"id": "Đầm SP914",
 			"price": "409.000đ",
 			"priceInNo": 409000,
-			"url": "dam-SP914"
+			"url": "dam-SP914",
+			"colorFilter": "xanh dương"
 		},
 		{
 			"src": "product-5",
@@ -42,7 +46,8 @@
 			"id": "Đầm SP915",
 			"price": "409.000đ",
 			"priceInNo": 409000,
-			"url": "dam-SP915"
+			"url": "dam-SP915",
+			"colorFilter": "đen"
 		},
 		{
 			"src": "product-6",
@@ -50,7 +55,8 @@
 			"id": "Đầm SP916",
 			"price": "359.000đ",
 			"priceInNo": 359000,
-			"url": "dam-SP916"
+			"url": "dam-SP916",
+			"colorFilter": "trắng"
 		},
 		{
 			"src": "product-7",
@@ -58,7 +64,8 @@
 			"id": "Đầm SP917",
 			"price": "349.000đ",
 			"priceInNo": 349000,
-			"url": "dam-SP917"
+			"url": "dam-SP917",
+			"colorFilter": "nâu"
 		},
 		{
 			"src": "product-8",
@@ -66,7 +73,8 @@
 			"id": "Đầm SP918",
 			"price": "299.000đ",
 			"priceInNo": 299000,
-			"url": "dam-SP918"
+			"url": "dam-SP918",
+			"colorFilter": "cam"
 		},
 		{
 			"src": "product-9",
@@ -74,7 +82,8 @@
 			"id": "Đầm SP919",
 			"price": "309.000đ",
 			"priceInNo": 309000,
-			"url": "dam-SP919"
+			"url": "dam-SP919",
+			"colorFilter": "đen"
 		},
 		{
 			"src": "product-10",
@@ -82,7 +91,8 @@
 			"id": "Đầm SP920",
 			"price": "349.000đ",
 			"priceInNo": 349000,
-			"url": "dam-SP920"
+			"url": "dam-SP920",
+			"colorFilter": "đen"
 		},
 		{
 			"src": "product-11",
@@ -90,7 +100,8 @@
 			"id": "Đầm SP921",
 			"price": "339.000đ",
 			"priceInNo": 339000,
-			"url": "dam-SP921"
+			"url": "dam-SP921",
+			"colorFilter": "nâu"
 		}
 	]
 }
