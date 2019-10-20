@@ -1,6 +1,7 @@
 import ProductDetail from "../components/detail-components/ProductDetail";
 import MoreInfo from "../components/detail-components/MoreInfo";
 import SimilarProducts from "../components/detail-components/SimilarProducts";
+import Preloader from "../components/category-components/Preloader";
 import { fetchProducts } from "../actions/products-actions";
 import React, { Component } from "react";
 import "../css/bootstrap.css";
@@ -17,7 +18,8 @@ class Detail extends Component {
 
 		return (
 			<React.Fragment>
-				<ProductDetail url={id} />
+				<Preloader />
+				<ProductDetail url={id} products={this.props.products} />
 				<MoreInfo url={id} />
 				<SimilarProducts products={this.props.products} />
 			</React.Fragment>

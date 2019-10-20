@@ -8,7 +8,8 @@ const cx = classNames.bind(styles);
 class SimilarProducts extends React.Component {
 	render() {
 		const { products } = this.props;
-		shuffle(products);
+		const clone = [...products];
+		shuffle(clone);
 		return (
 			<div className={cx(styles.clearFix, styles.category)}>
 				<p
@@ -25,24 +26,28 @@ class SimilarProducts extends React.Component {
 					CÓ THỂ BẠN SẼ THÍCH
 				</p>
 
-				{products.map((product, index) => {
-					if (index % 3 === 0) {
-						return (
-							<div className={cx(styles.product, styles.like)}>
-								<Link to={`/detail/${product.url}`}>
-									<div className={styles.hide}>
-										<img
-											alt="product"
-											src={`/img/${product.src}.png`}
-										/>
-									</div>
-									<h3>{product.id}</h3>
-									<p>{product.price}</p>
-								</Link>
-							</div>
-						);
-					} else return null;
-				})}
+				{clone &&
+					clone.map((product, index) => {
+						if (index % 3 === 0) {
+							return (
+								<div
+									className={cx(styles.product, styles.like)}
+									key={product.id}
+								>
+									<Link to={`/detail/${product.url}`}>
+										<div className={styles.hide}>
+											<img
+												alt="product"
+												src={`/img/${product.src}.png`}
+											/>
+										</div>
+										<h3>{product.id}</h3>
+										<p>{product.price}</p>
+									</Link>
+								</div>
+							);
+						} else return null;
+					})}
 			</div>
 		);
 	}

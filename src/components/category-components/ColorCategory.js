@@ -21,23 +21,9 @@ class ColorCategory extends React.Component {
 		this.setState({ cssUpdate: update });
 	};
 
-	handleOrange = () => {
-		this.setState({ color: "cam" });
-	};
-	handleBlue = () => {
-		this.setState({ color: "xanh dương" });
-	};
-	handleMultiColor = () => {
-		this.setState({ color: "nhiều màu" });
-	};
-	handleBrown = () => {
-		this.setState({ color: "nâu" });
-	};
-	handleWhite = () => {
-		this.setState({ color: "trắng" });
-	};
-	handleBlack = () => {
-		this.setState({ color: "đen" });
+	handleColor = e => {
+		const target = e.target.dataset.color;
+		this.setState({ color: target });
 	};
 	componentDidUpdate(prevProps, prevState) {
 		this.props.colorFilter(this.state.color);
@@ -60,32 +46,56 @@ class ColorCategory extends React.Component {
 				</div>
 				<ul className={cx(styles.subMenu, cssUpdate[1])} id="no5">
 					<li>
-						<a href="#orange" onClick={this.handleOrange}>
+						<a
+							data-color="cam"
+							href="#orange"
+							onClick={this.handleColor}
+						>
 							Cam
 						</a>
 					</li>
 					<li>
-						<a onClick={this.handleBlue} href="#blue">
+						<a
+							data-color="xanh dương"
+							onClick={this.handleColor}
+							href="#blue"
+						>
 							Xanh dương
 						</a>
 					</li>
 					<li>
-						<a onClick={this.handleMultiColor} href="#multi-color">
+						<a
+							data-color="nhiều màu"
+							onClick={this.handleColor}
+							href="#multi-color"
+						>
 							Nhiều màu
 						</a>
 					</li>
 					<li>
-						<a onClick={this.handleBrown} href="#brown">
+						<a
+							data-color="nâu"
+							onClick={this.handleColor}
+							href="#brown"
+						>
 							Nâu
 						</a>
 					</li>
 					<li>
-						<a onClick={this.handleWhite} href="#white">
+						<a
+							data-color="trắng"
+							onClick={this.handleColor}
+							href="#white"
+						>
 							Trắng
 						</a>
 					</li>
 					<li>
-						<a onClick={this.handleBlack} href="#black">
+						<a
+							data-color="đen"
+							onClick={this.handleColor}
+							href="#black"
+						>
 							Đen
 						</a>
 					</li>
