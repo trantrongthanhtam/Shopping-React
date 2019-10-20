@@ -89,11 +89,17 @@ export default function cartReducer(state = defaultState, action) {
 				cartProducts: updatedCart
 			};
 		case UP_QUANTITY:
-			console.log("up");
-
-			const { itemUpQuantity } = action;
+			const {
+				itemIdUpQuantity,
+				itemColorUpQuantity,
+				itemSizeUpQuantity
+			} = action;
 			updatedCart = cartProducts.map(item => {
-				if (item.name === itemUpQuantity) {
+				if (
+					item.name === itemIdUpQuantity &&
+					item.color === itemColorUpQuantity &&
+					item.size === itemSizeUpQuantity
+				) {
 					return {
 						...item,
 						quantity: item.quantity + 1
@@ -112,9 +118,18 @@ export default function cartReducer(state = defaultState, action) {
 				cartProducts: updatedCart
 			};
 		case DOWN_QUANTITY:
-			const { itemDownQuantity } = action;
+			const {
+				itemIdDownQuantity,
+				itemColorDownQuantity,
+				itemSizeDownQuantity
+			} = action;
 			updatedCart = cartProducts.map(item => {
-				if (item.name === itemDownQuantity && item.quantity > 1) {
+				if (
+					item.name === itemIdDownQuantity &&
+					item.color === itemColorDownQuantity &&
+					item.size === itemSizeDownQuantity &&
+					item.quantity > 1
+				) {
 					return {
 						...item,
 						quantity: item.quantity - 1

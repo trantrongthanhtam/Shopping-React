@@ -43,13 +43,13 @@ class BuyProduct extends React.Component {
 					<i
 						className="fa fa-chevron-down"
 						style={{ cursor: "pointer" }}
-						onClick={() => downQuantity(name)}
+						onClick={() => downQuantity(name, color, size)}
 					/>
 					  {quantity}  
 					<i
 						className="fa fa-chevron-up"
 						style={{ cursor: "pointer" }}
-						onClick={() => upQuantity(name)}
+						onClick={() => upQuantity(name, color, size)}
 					/>
 				</div>
 				<div className={styles.buyPrice}>{price}</div>

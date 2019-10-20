@@ -31,15 +31,19 @@ export function removeFromCart(id, color, size) {
 		removedItemSize: size
 	};
 }
-export function upQuantity(id) {
+export function upQuantity(id, color, size) {
 	return {
 		type: UP_QUANTITY,
-		itemUpQuantity: id
+		itemIdUpQuantity: id,
+		itemColorUpQuantity: color,
+		itemSizeUpQuantity: size
 	};
 }
-export function downQuantity(id) {
+export function downQuantity(id, color, size) {
 	return {
 		type: DOWN_QUANTITY,
-		itemDownQuantity: id
+		itemIdDownQuantity: id,
+		itemColorDownQuantity: color,
+		itemSizeDownQuantity: size
 	};
 }
