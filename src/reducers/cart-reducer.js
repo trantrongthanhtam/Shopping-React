@@ -32,7 +32,11 @@ export default function cartReducer(state = defaultState, action) {
 			if (foundItem) {
 				// item has been added before
 				updatedCart = cartProducts.map(item => {
-					if (item.name === itemId) {
+					if (
+						item.name === itemId &&
+						item.color === itemColor &&
+						item.size === itemSize
+					) {
 						return {
 							...item,
 							quantity: item.quantity + 1
