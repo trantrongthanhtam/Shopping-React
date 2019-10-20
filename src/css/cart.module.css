@@ -54,7 +54,7 @@ button {
 	margin: 0px 40px 20px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .category::after {
@@ -256,4 +256,67 @@ button {
 .sumupValue b {
 	font-family: utm-avo;
 	font-size: 10px;
+}
+@media screen and (max-width: 533px) {
+	.cartSum {
+		display: grid;
+		grid-template-areas: "test1 test1" " bt1 bt1" "title1 title1" "form1 form1" "title2 title3" "cnt1 cnt2" "bt3 bt3";
+		grid-auto-rows: 35px;
+		align-items: center;
+		justify-items: center;
+	}
+
+	.buyTitle {
+		display: none;
+	}
+	.buyInfo {
+		flex: 0 0 65%;
+		padding-left: 15px;
+	}
+
+	.buySize,
+	.buyColor,
+	.buyQuantity {
+		flex: 0 0 20%;
+		padding: 12px 0px;
+	}
+
+	.buyPrice {
+		flex: 0 0 28%;
+		padding: 12px 8px;
+	}
+
+	.buyDelete {
+		padding: 12px 0px;
+		cursor: pointer;
+	}
+}
+@media screen and (min-width: 533px) and (max-width: 727px) {
+	.cartSum {
+		display: grid;
+		grid-template-areas: "test1 title1 title1 " "bt1 form1 form1 " "title2 title3 test2" "cnt1 cnt2 bt3";
+		grid-auto-rows: 35px;
+		align-items: center;
+	}
+	.buyInfo {
+		flex: 0 0 60%;
+		padding-left: 15px;
+	}
+
+	.buySize,
+	.buyColor,
+	.buyQuantity {
+		flex: 0 0 24%;
+		padding: 12px 0px;
+	}
+
+	.buyPrice {
+		flex: 0 0 24%;
+		padding: 12px 0px;
+	}
+
+	.buyDelete {
+		padding: 12px 0px;
+		cursor: pointer;
+	}
 }

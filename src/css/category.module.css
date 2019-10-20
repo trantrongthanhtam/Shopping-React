@@ -341,6 +341,7 @@ a {
 }
 
 .adContainer {
+	display: none;
 	padding: 10px 23px;
 	position: relative;
 }
@@ -425,5 +426,8 @@ a {
 @media screen and (max-width: 527px) {
 	.product {
 		width: 100%;
+	}
+	.bannerCategory {
+		padding-top: 70px;
 	}
 }

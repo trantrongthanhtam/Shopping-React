@@ -467,3 +467,22 @@ button {
 		margin-top: 8px;
 	}
 }
+
+@media screen and (max-width: 627px) {
+	header {
+		position: sticky;
+		top: 64px;
+		z-index: 10;
+	}
+
+	.nav > div {
+		min-width: 95px;
+	}
+	.nav > ul {
+		justify-content: space-around;
+	}
+
+	.cartCount {
+		top: 10px;
+	}
+}

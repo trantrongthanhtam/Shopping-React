@@ -75,7 +75,7 @@ body {
 	margin: 0px 40px 20px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .category::after {
@@ -228,18 +228,21 @@ body {
 	margin-bottom: 20px;
 }
 
-.mainImg img {
-	width: 100%;
+.mainImg {
+	display: flex;
+	justify-content: center;
 }
 
 .subImgSeries {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	margin-top: 5px;
 }
 
 .subImgSeries img {
 	width: 24%;
+	margin: 0 5px;
+	max-width: 90px;
 }
 
 .productPickup {
